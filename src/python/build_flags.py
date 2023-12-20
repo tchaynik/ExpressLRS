@@ -88,6 +88,10 @@ def process_build_flag(define):
             parts = re.search("(.*)=\w*\"(.*)\"$", define)
             if parts and parts.group(2):
                 define = "-DHOME_WIFI_PASSWORD=" + string_to_ascii(parts.group(2))
+        if "BLE_JOYSTICK_NAME=" in define:
+            parts = re.search("(.*)=\w*\"(.*)\"$", define)
+            if parts and parts.group(2):
+                define = "-DBLE_JOYSTICK_NAME=\"" +parts.group(2)+"\""        
         if "DEVICE_NAME=" in define:
             parts = re.search("(.*)=\w*'?\"(.*)\"'?$", define)
             if parts and parts.group(2):

@@ -11,13 +11,9 @@
 #include <BleGamepad.h>
 #include <NimBLEDevice.h>
 
-#ifndef BLE_JOYSTICK_NAME
-#define BLE_JOYSTICK_NAME "ExpressLRS Joystick"
-#endif
-
 class ELRSGamepad : public BleGamepad {
     public:        
-        ELRSGamepad() : BleGamepad(BLE_JOYSTICK_NAME, "ELRS", 100) {};
+        ELRSGamepad() : BleGamepad("Jumper T Pro Joystick", "ELRS", 100) {};
 
     protected:
         void onStarted(NimBLEServer *pServer) {
